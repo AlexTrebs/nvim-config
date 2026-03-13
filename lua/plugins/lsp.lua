@@ -58,7 +58,15 @@ local servers = {
 	},
 	lua_ls = true,
 	rust_analyzer = true,
-	svelte = true,
+	svelte = {
+		on_new_config = function(new_config, new_root_dir)
+			local tsdk = vim.fn.finddir("node_modules/typescript/lib", new_root_dir .. ";")
+			if tsdk ~= "" then
+				new_config.init_options = new_config.init_options or {}
+				new_config.init_options.typescript = { tsdk = vim.fn.fnamemodify(tsdk, ":p") }
+			end
+		end,
+	},
 	templ = true,
 	cssls = true,
 	ts_ls = {
