@@ -173,6 +173,11 @@ vim.api.nvim_create_autocmd("FileType", {
 			root_dir = root,
 			on_attach = on_attach,
 			capabilities = cmp_capabilities or {},
+			settings = {
+				["omnisharp"] = {
+					useModernNet = false,
+				},
+			},
 		})
 	end,
 })

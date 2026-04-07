@@ -78,6 +78,7 @@
 | Key | Action |
 | --- | --- |
 | `gd` | Go to definition |
+| `<C-LeftMouse>` | Go to definition (Ctrl+Click) |
 | `gD` | Go to declaration |
 | `gr` | References |
 | `gT` | Type definition |
@@ -139,7 +140,13 @@
 | `<leader>1..9` | Go to buffer 1-9 |
 | `<leader>bp` | Pin/unpin buffer |
 
-### 2.7. Navigation / Editing
+### 2.7. Hyprland Window Management
+| Key | Action |
+| --- | --- |
+| `Super+M` | Maximize / unmaximize focused window (Alt+Tab still works between maximized windows) |
+| `Super+F` | Toggle floating |
+
+### 2.8. Navigation / Editing
 | Key | Action |
 | --- | --- |
 | `<C-j>` / `<C-k>` / `<C-h>` / `<C-l>` | Navigate splits |

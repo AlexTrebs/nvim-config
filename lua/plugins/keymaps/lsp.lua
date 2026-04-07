@@ -3,6 +3,7 @@ local set = vim.keymap.set
 
 -- LSP keybindings
 set("n", "gd", vim.lsp.buf.definition)
+set("n", "<C-LeftMouse>", "<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>")
 set("n", "gr", vim.lsp.buf.references)
 set("n", "gD", vim.lsp.buf.declaration)
 set("n", "gT", vim.lsp.buf.type_definition)
