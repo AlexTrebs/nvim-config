@@ -41,6 +41,9 @@ local function on_attach(bufnr)
 end
 
 require("nvim-tree").setup({
+	filters = {
+		custom = { "\\.uss$", "\\.meta$" },
+	},
 	view = { side = "left", width = 25 },
 	renderer = {
 		highlight_opened_files = "none", -- Disable to avoid conflicts with git highlighting
