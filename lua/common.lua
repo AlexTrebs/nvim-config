@@ -1,5 +1,5 @@
 -- Global options
-vim.g.mouse = "a"
+vim.opt.mouse = "a"
 vim.g.mapleader = " "
 vim.opt.encoding = "utf-8"
 vim.opt.swapfile = false
