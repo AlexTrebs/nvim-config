@@ -54,6 +54,7 @@ Plug("nvim-neotest/nvim-nio")
 -- ========== FILES / NAVIGATION ==========
 Plug("ThePrimeagen/harpoon", { branch = "harpoon2" })
 Plug("alexghergh/nvim-tmux-navigation")
+Plug("stevearc/oil.nvim")
 
 -- ========== FORMATTING ==========
 Plug("stevearc/conform.nvim")
@@ -62,6 +63,11 @@ Plug("stevearc/conform.nvim")
 Plug("tpope/vim-dadbod")
 Plug("kristijanhusak/vim-dadbod-ui")
 Plug("kristijanhusak/vim-dadbod-completion")
+
+-- ========== EDITING ==========
+Plug("windwp/nvim-autopairs")
+Plug("folke/flash.nvim")
+Plug("folke/persistence.nvim")
 
 -- ========== MISC ==========
 Plug("iamcco/markdown-preview.nvim", { ["do"] = "cd app && npm install" })
@@ -91,3 +97,5 @@ require("plugins.markdown-render")
 require("plugins.gitsigns")
 require("plugins.trouble")
 require("plugins.snacks")
+require("plugins.oil")
+require("plugins.editing")

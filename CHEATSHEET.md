@@ -57,7 +57,11 @@
 | `theHamsta/nvim-dap-virtual-text` | Display debug info inline |
 | `nvim-neotest/nvim-nio` | Test runner integration |
 | `ThePrimeagen/harpoon` | Quick file navigation / marks |
+| `stevearc/oil.nvim` | Edit filesystem as a buffer — rename/move/delete files by editing text |
 | `stevearc/conform.nvim` | Autoformatting on save |
+| `windwp/nvim-autopairs` | Auto-close `()` `[]` `{}` and quotes |
+| `folke/flash.nvim` | Jump anywhere on screen with `s`/`S` by 2 chars |
+| `folke/persistence.nvim` | Session management — restore buffer layout per directory |
 | `tpope/vim-dadbod` | Database client |
 | `kristijanhusak/vim-dadbod-ui` | UI for database plugin |
 | `kristijanhusak/vim-dadbod-completion` | SQL completion |
@@ -206,6 +210,33 @@
 | Key | Action |
 | --- | --- |
 | `<Plug>PlenaryTestFile` | Test current file with Plenary |
+
+### 2.16. Oil (File Manager)
+| Key | Action |
+| --- | --- |
+| `-` | Open parent directory in Oil |
+| `<CR>` | Open file / enter directory |
+| `-` (in Oil) | Go up to parent |
+| `_` | Open cwd |
+| `g.` | Toggle hidden files |
+| `<C-p>` | Preview file |
+| `q` | Close Oil |
+
+### 2.17. Flash (Jump Motions)
+| Key | Action |
+| --- | --- |
+| `s` | Jump to any position (type 2 chars, pick label) |
+| `S` | Treesitter-aware jump (select nodes) |
+| `r` (operator) | Remote flash — operate on distant text |
+| `R` (operator) | Treesitter search select |
+
+### 2.18. Sessions (persistence.nvim)
+| Key | Action |
+| --- | --- |
+| `<leader>qs` | Restore session for current directory |
+| `<leader>qS` | Select a session to restore |
+| `<leader>ql` | Restore last session |
+| `<leader>qd` | Don't save session on exit |
 
 ---
 
