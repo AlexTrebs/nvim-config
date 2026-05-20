@@ -147,7 +147,6 @@
 ### 2.7. Hyprland Window Management
 | Key | Action |
 | --- | --- |
-| `Super+Tab` | **Workspace overview** (hyprexpo grid) |
 | `Super+M` | Toggle Spotify special workspace |
 | `Super+F` | Toggle floating |
 
