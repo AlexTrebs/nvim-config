@@ -62,6 +62,10 @@
 | `windwp/nvim-autopairs` | Auto-close `()` `[]` `{}` and quotes |
 | `folke/flash.nvim` | Jump anywhere on screen with `s`/`S` by 2 chars |
 | `folke/persistence.nvim` | Session management — restore buffer layout per directory |
+| `folke/todo-comments.nvim` | Highlights TODO/FIXME/HACK comments, jump between them, list in Trouble |
+| `nvim-pack/nvim-spectre` | Project-wide find & replace with regex preview |
+| `mfussenegger/nvim-lint` | Async linting (eslint_d, ruff, shellcheck, golangci-lint) |
+| `sindrets/diffview.nvim` | Full-screen git diff and file history viewer |
 | `tpope/vim-dadbod` | Database client |
 | `kristijanhusak/vim-dadbod-ui` | UI for database plugin |
 | `kristijanhusak/vim-dadbod-completion` | SQL completion |
@@ -236,6 +240,35 @@
 | `<leader>qS` | Select a session to restore |
 | `<leader>ql` | Restore last session |
 | `<leader>qd` | Don't save session on exit |
+
+### 2.19. TODOs (todo-comments.nvim)
+| Key | Action |
+| --- | --- |
+| `]t` | Next TODO comment |
+| `[t` | Previous TODO comment |
+| `<leader>xt` | List all TODOs in Trouble |
+| `<leader>ft` | Find TODOs in Telescope |
+
+### 2.20. Spectre (project find & replace)
+| Key | Action |
+| --- | --- |
+| `<leader>sr` | Open Spectre (project-wide replace) |
+| `<leader>sw` | Replace word under cursor project-wide |
+| `<leader>sw` (visual) | Replace selection project-wide |
+| `<leader>sf` | Replace in current file only |
+
+### 2.21. Diffview (git diff)
+| Key | Action |
+| --- | --- |
+| `<leader>gd` | Open git diff (all changed files) |
+| `<leader>gh` | Current file git history |
+| `<leader>gH` | Full repo git history |
+| `<leader>gc` | Close diffview |
+
+### 2.22. Linting (nvim-lint)
+| Key | Action |
+| --- | --- |
+| `<leader>cl` | Manually trigger linting on current buffer |
 
 ---
 
