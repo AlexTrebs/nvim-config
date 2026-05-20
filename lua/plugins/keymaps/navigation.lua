@@ -1,10 +1,12 @@
 local set = vim.keymap.set
 
--- Window navigation
-set("n", "<c-j>", "<c-w><c-j>")
-set("n", "<c-k>", "<c-w><c-k>")
-set("n", "<c-h>", "<c-w><c-h>")
-set("n", "<c-l>", "<c-w><c-l>")
+-- Window/pane navigation (nvim-tmux-navigation handles splits + tmux panes)
+local nav = require("nvim-tmux-navigation")
+nav.setup({ disable_when_zoomed = true })
+set("n", "<C-h>", nav.NvimTmuxNavigateLeft)
+set("n", "<C-j>", nav.NvimTmuxNavigateDown)
+set("n", "<C-k>", nav.NvimTmuxNavigateUp)
+set("n", "<C-l>", nav.NvimTmuxNavigateRight)
 
 -- Resize splits
 set("n", "<M-,>", "<c-w>5<")

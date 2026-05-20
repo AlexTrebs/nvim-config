@@ -1,7 +1,6 @@
 local conform = require("conform")
 
 conform.setup({
-	format_on_save = true,
 	formatters_by_ft = {
 		lua = { "stylua" },
 		go = { "gofmt" },
@@ -22,7 +21,7 @@ conform.setup({
 		rust = { "rustfmt", lsp_format = "fallback" },
 		java = { "google_java_format" },
 		ruby = { "rubocop" },
-		cs = { "clang_format" },
+		cs = { "csharpier" },
 	},
 })
 

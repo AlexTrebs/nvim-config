@@ -12,16 +12,12 @@ Plug("williamboman/mason.nvim")
 Plug("williamboman/mason-lspconfig.nvim")
 Plug("WhoIsSethDaniel/mason-tool-installer.nvim")
 Plug("b0o/SchemaStore.nvim")
-Plug("folke/neodev.nvim")
+Plug("folke/lazydev.nvim")
 
 -- ========== CMP ==========
-Plug("hrsh7th/nvim-cmp")
-Plug("hrsh7th/cmp-nvim-lsp")
-Plug("hrsh7th/cmp-buffer")
-Plug("hrsh7th/cmp-path")
-Plug("saadparwaiz1/cmp_luasnip")
+Plug("saghen/blink.lib")
+Plug("saghen/blink.cmp")
 Plug("L3MON4D3/LuaSnip")
-Plug("onsails/lspkind.nvim")
 
 -- ========== TREESITTER ==========
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" })
@@ -35,6 +31,11 @@ Plug("nvim-tree/nvim-tree.lua")
 Plug("nvim-tree/nvim-web-devicons")
 Plug("folke/noice.nvim")
 Plug("MunifTanjim/nui.nvim")
+Plug("folke/which-key.nvim")
+Plug("echasnovski/mini.surround")
+Plug("lewis6991/gitsigns.nvim")
+Plug("folke/trouble.nvim")
+Plug("folke/snacks.nvim")
 
 -- ========== TELESCOPE ==========
 Plug("nvim-telescope/telescope.nvim")
@@ -52,6 +53,7 @@ Plug("nvim-neotest/nvim-nio")
 
 -- ========== FILES / NAVIGATION ==========
 Plug("ThePrimeagen/harpoon", { branch = "harpoon2" })
+Plug("alexghergh/nvim-tmux-navigation")
 
 -- ========== FORMATTING ==========
 Plug("stevearc/conform.nvim")
@@ -62,7 +64,6 @@ Plug("kristijanhusak/vim-dadbod-ui")
 Plug("kristijanhusak/vim-dadbod-completion")
 
 -- ========== MISC ==========
-Plug("tjdevries/express_line.nvim")
 Plug("iamcco/markdown-preview.nvim", { ["do"] = "cd app && npm install" })
 Plug("ThePrimeagen/99")
 
@@ -87,3 +88,6 @@ require("plugins.noice")
 require("plugins.markdown")
 require("plugins.ai")
 require("plugins.markdown-render")
+require("plugins.gitsigns")
+require("plugins.trouble")
+require("plugins.snacks")

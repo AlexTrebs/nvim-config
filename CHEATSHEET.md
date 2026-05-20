@@ -28,14 +28,9 @@
 | `williamboman/mason-lspconfig.nvim` | Integration of Mason with LSP servers |
 | `WhoIsSethDaniel/mason-tool-installer.nvim` | Ensure tools like formatters / linters are installed |
 | `b0o/SchemaStore.nvim` | JSON/YAML schemas for LSP autocomplete |
-| `folke/neodev.nvim` | Lua development support for Neovim |
-| `hrsh7th/nvim-cmp` | Autocomplete engine |
-| `hrsh7th/cmp-nvim-lsp` | LSP source for nvim-cmp |
-| `hrsh7th/cmp-buffer` | Buffer source for autocomplete |
-| `hrsh7th/cmp-path` | Path source for autocomplete |
-| `saadparwaiz1/cmp_luasnip` | Snippet support for autocomplete |
+| `folke/lazydev.nvim` | Lua dev support for Neovim config (replaces neodev) |
+| `saghen/blink.lib` + `saghen/blink.cmp` | Fast autocomplete engine with Lua fuzzy matching |
 | `L3MON4D3/LuaSnip` | Snippet engine |
-| `onsails/lspkind.nvim` | Icons for autocomplete entries |
 | `nvim-treesitter/nvim-treesitter` | Syntax highlighting, code parsing, incremental selection |
 | `windwp/nvim-ts-autotag` | Auto-close HTML/JSX tags |
 | `romgrk/barbar.nvim` | Tabline / buffer line |
@@ -45,24 +40,29 @@
 | `nvim-tree/nvim-web-devicons` | Icons for files |
 | `folke/noice.nvim` | UI for messages, cmdline and popupmenu |
 | `MunifTanjim/nui.nvim` | UI component library for Noice |
+| `folke/which-key.nvim` | Shows available keybindings popup after `<leader>` |
+| `echasnovski/mini.surround` | Surround text with brackets, quotes, tags |
+| `lewis6991/gitsigns.nvim` | Git diff in gutter, hunk staging, inline blame |
+| `folke/trouble.nvim` | Project-wide diagnostic panel |
+| `folke/snacks.nvim` | Bigfile handling, word highlights, indent guides |
+| `alexghergh/nvim-tmux-navigation` | Seamless navigation between nvim splits and tmux panes |
 | `nvim-telescope/telescope.nvim` | Fuzzy finding and search |
 | `nvim-telescope/telescope-fzf-native.nvim` | FZF integration for Telescope |
 | `nvim-telescope/telescope-ui-select.nvim` | UI select menus for Telescope |
-| `nvim-telescope/telescope-smart-history.nvim` | History for Telescope searches |
-| `kkharji/sqlite.lua` | SQLite interface for Telescope / plugins |
+| `nvim-telescope/telescope-smart-history.nvim` | Persistent search history for Telescope |
+| `kkharji/sqlite.lua` | SQLite interface (used by smart history) |
 | `mfussenegger/nvim-dap` | Debug Adapter Protocol |
 | `rcarriga/nvim-dap-ui` | UI for DAP |
 | `leoluz/nvim-dap-go` | Go language debugging support |
 | `theHamsta/nvim-dap-virtual-text` | Display debug info inline |
 | `nvim-neotest/nvim-nio` | Test runner integration |
 | `ThePrimeagen/harpoon` | Quick file navigation / marks |
-| `stevearc/conform.nvim` | Autoformatting support |
+| `stevearc/conform.nvim` | Autoformatting on save |
 | `tpope/vim-dadbod` | Database client |
 | `kristijanhusak/vim-dadbod-ui` | UI for database plugin |
 | `kristijanhusak/vim-dadbod-completion` | SQL completion |
-| `tjdevries/express_line.nvim` | Alternative statusline (optional) |
 | `iamcco/markdown-preview.nvim` | Markdown preview in browser |
-| `ThePrimeagen/99` | AI agent for Neovim (Claude Code provider) |
+| `ThePrimeagen/99` | AI agent for Neovim (Claude claude-sonnet-4-6) |
 | `MeanderingProgrammer/render-markdown.nvim` | Live markdown rendering in buffer |
 
 ---
@@ -149,27 +149,51 @@
 ### 2.8. Navigation / Editing
 | Key | Action |
 | --- | --- |
-| `<C-j>` / `<C-k>` / `<C-h>` / `<C-l>` | Navigate splits |
+| `<C-h>` / `<C-j>` / `<C-k>` / `<C-l>` | Navigate nvim splits **and** tmux panes seamlessly |
 | `<M-,>` / `<M-.>` | Resize splits horizontally |
 | `<M-t>` / `<M-s>` | Resize splits vertically |
 | `<M-j>` / `<M-k>` | Move current line down/up (or diff navigation) |
 | `<CR>` | Clear search highlight if active, else enter |
 | `<leader>ch` | **Open this cheatsheet** (formatted in browser) |
 
-### 2.8. 99 AI Agent
+### 2.9. Git (gitsigns)
+| Key | Action |
+| --- | --- |
+| `]h` | Next git hunk |
+| `[h` | Previous git hunk |
+| `<leader>hs` | Stage hunk |
+| `<leader>hu` | Unstage hunk |
+| `<leader>hp` | Preview hunk diff |
+| `<leader>hb` | Blame current line (full) |
+
+### 2.10. Diagnostics (trouble.nvim)
+| Key | Action |
+| --- | --- |
+| `<leader>xx` | Toggle project diagnostics panel |
+| `<leader>xb` | Toggle buffer diagnostics panel |
+| `<leader>xs` | Toggle symbols panel |
+
+### 2.11. Surround (mini.surround)
+| Key | Action |
+| --- | --- |
+| `sa{motion}{char}` | Add surround — e.g. `saiw"` surrounds word with `"` |
+| `sd{char}` | Delete surround — e.g. `sd"` removes `"` |
+| `sr{old}{new}` | Replace surround — e.g. `sr"'` changes `"` to `'` |
+
+### 2.12. 99 AI Agent
 | Key | Action |
 | --- | --- |
 | `<leader>a` (visual) | Send visual selection to 99 AI |
 | `<leader>as` (visual) | Stop all 99 AI requests |
 
-### 2.9. Markdown
+### 2.13. Markdown
 | Key | Action |
 | --- | --- |
 | `<leader>mp` | **Markdown Preview** - Open in web browser (full HTML rendering) |
 | `<leader>ms` | Stop markdown preview |
 | `<leader>md` | Toggle in-editor rendering (conceals markup, styles headers) |
 
-### 2.10. Comments & Snippets
+### 2.14. Comments & Snippets
 | Key | Action |
 | --- | --- |
 | `gcc` | Toggle comment line |
@@ -177,7 +201,7 @@
 | `<Plug>luasnip-expand-repeat` | Repeat last snippet node expansion |
 | `<Plug>luasnip-delete-check` | Remove current snippet from jumplist |
 
-### 2.11. Plenary Test
+### 2.15. Plenary Test
 | Key | Action |
 | --- | --- |
 | `<Plug>PlenaryTestFile` | Test current file with Plenary |

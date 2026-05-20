@@ -12,6 +12,14 @@ set("n", "<space>cr", vim.lsp.buf.rename)
 set("n", "<space>ca", vim.lsp.buf.code_action)
 set("n", "<space>wd", vim.lsp.buf.document_symbol or builtin.lsp_document_symbols)
 set("n", "<leader>e", vim.diagnostic.open_float)
+set("n", "<leader>ey", function()
+	local diags = vim.diagnostic.get(0, { lnum = vim.fn.line(".") - 1 })
+	if #diags > 0 then
+		local msg = diags[1].message
+		vim.fn.setreg("+", msg)
+		vim.notify("Copied: " .. msg)
+	end
+end, { desc = "Yank diagnostic at cursor" })
 set("n", "<space>ww", function()
 	builtin.diagnostics({ root_dir = true })
 end)

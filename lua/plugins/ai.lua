@@ -5,7 +5,7 @@ local _99 = require("99")
 
 _99.setup({
 	provider = _99.Providers.ClaudeCodeProvider,
-	model = "claude-sonnet-4-5",
+	model = "claude-sonnet-4-6",
 	logger = {
 		level = _99.DEBUG,
 		path = "/tmp/" .. basename .. ".99.debug",
@@ -16,7 +16,7 @@ _99.setup({
 			"scratch/custom_rules/",
 		},
 		files = {},
-		source = "cmp",
+		source = "native",
 	},
 	md_files = {
 		"AGENT.md",

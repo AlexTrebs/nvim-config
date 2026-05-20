@@ -1,10 +1,7 @@
-require("neodev").setup()
-vim.lsp.set_log_level("WARN")
+require("lazydev").setup()
+vim.lsp.log.set_level("WARN")
 
-local cmp_capabilities = nil
-if pcall(require, "cmp_nvim_lsp") then
-	cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-end
+local cmp_capabilities = require("blink.cmp").get_lsp_capabilities()
 
 local on_attach = function(client, bufnr)
 	local opts = { buffer = bufnr, noremap = true, silent = true }
@@ -95,7 +92,11 @@ local servers = {
 			},
 		},
 	},
-	eslint = true,
+	eslint = {
+		settings = {
+			experimental = { useFlatConfig = true },
+		},
+	},
 	jsonls = true,
 	yamlls = true,
 	pyright = {
@@ -175,7 +176,7 @@ vim.api.nvim_create_autocmd("FileType", {
 			capabilities = cmp_capabilities or {},
 			settings = {
 				["omnisharp"] = {
-					useModernNet = false,
+					useModernNet = true,
 				},
 			},
 		})
