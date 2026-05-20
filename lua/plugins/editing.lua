@@ -1,10 +1,7 @@
--- nvim-autopairs
+-- nvim-autopairs (works independently alongside blink.cmp)
 require("nvim-autopairs").setup({
 	check_ts = true,
 })
--- integrate with blink.cmp
-local autopairs = require("nvim-autopairs.completion.handlers")
-require("blink.cmp").on_confirm_done(autopairs.on_confirm_done())
 
 -- flash.nvim
 require("flash").setup()
