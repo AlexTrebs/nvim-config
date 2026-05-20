@@ -143,7 +143,8 @@
 ### 2.7. Hyprland Window Management
 | Key | Action |
 | --- | --- |
-| `Super+M` | Maximize / unmaximize focused window (Alt+Tab still works between maximized windows) |
+| `Super+Tab` | **Workspace overview** (hyprexpo grid) |
+| `Super+M` | Toggle Spotify special workspace |
 | `Super+F` | Toggle floating |
 
 ### 2.8. Navigation / Editing
