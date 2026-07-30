@@ -111,7 +111,11 @@ local servers = {
 	},
 	ruff = true,
 	omnisharp = false,
-	ruby_lsp = {
+	-- Mason installs ruby-lsp through `gem`, so on a machine without Ruby the
+	-- install fails on every :MasonToolsInstall. Gate on the runtime actually
+	-- being present rather than on a hostname, so this self-configures: enabled
+	-- wherever Ruby exists, silently skipped where it doesn't.
+	ruby_lsp = vim.fn.executable("gem") == 1 and {
 		settings = {
 			rubyLsp = {
 				diagnostics = true,
@@ -119,7 +123,7 @@ local servers = {
 				linters = { "rubocop" },
 			},
 		},
-	},
+	} or false,
 }
 
 -- Install servers via Mason
